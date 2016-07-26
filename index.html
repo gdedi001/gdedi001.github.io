@@ -7,9 +7,9 @@
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   </head>
   <body>
-     <a-scene editor stats>
+     <a-scene>
          <!-- Notes Section -->
-         <!-- 
+         <!--
             To give entities shape and appearance, we can attach the 'geometry' and 'material' components, as well as 'light' to emit lighting -->
 
          <!-- Asset management system -->
@@ -26,8 +26,8 @@
              <!-- TODO: Fix audio -->
              <audio id="welcome" src="sounds/welcome.ogg"/>
          </a-assets>
-                  
-         
+
+
         <!-- Bright House Logo -->
         <a-entity id="brightHouse" position="0 2.15 -5" scale=".50 .50 .50">
              <!-- Background blue -->
@@ -39,17 +39,17 @@
             </a-entity>
              <!-- Inner Circle -->
             <a-torus id="innerRing"
-                color="#FFB300"  
+                color="#FFB300"
                 segments-radial="100"
-                segments-tubular="200" 
+                segments-tubular="200"
                 radius="1"
                 radius-tubular="0.1">
             </a-torus>
              <!-- Outer Circle -->
             <a-torus id="outerRing"
-                color="#FFB300" 
-                segments-radial="100" 
-                segments-tubular="200" 
+                color="#FFB300"
+                segments-radial="100"
+                segments-tubular="200"
                 radius="2"
                 radius-tubular="0.1">
             </a-torus>
@@ -93,7 +93,7 @@
             <a-event name="mouseleave" position="0 2.15 -5"></a-event>
 -->
          </a-entity>
-         
+
          <!-- BrightU Logo -->
         <a-curvedimage id="brightU" src="#brightU"
             height="3.0"
@@ -102,8 +102,8 @@
             rotation="0 -220 0"
             position="-0.08 11.90 2.28"
             scale="2.74 2.74 2.82">
-        </a-curvedimage> 
-         
+        </a-curvedimage>
+
         <!-- Enterprise/SMB Logos -->
          <!-- Cloud -->
         <a-curvedimage id="cloud" src="#cloud"
@@ -127,7 +127,7 @@
             openEnded="false">
         </a-curvedimage>
 <!--
-         <a-image id="internet" src="#internet" 
+         <a-image id="internet" src="#internet"
             width="3"
             height="2"
             position="-4.84 2.10 -3.38">
@@ -153,34 +153,34 @@
             position="6.93 2.10 1.26"
             scale="1.58 1.02 1.42">
         </a-curvedimage>
-                  
+
         <!-- Floor -->
-        <a-entity id="floor" 
+        <a-entity id="floor"
             geometry="primitive: cylinder; height: .2; radius: 12"
             material="src: #floor; metalness: .1; repeat: 50 20; roughness: .2">
         </a-entity>
-         
+
         <!-- Door -->
         <a-collada-model id="door" src="#door"
             rotation="0.00 90.00 0.00"
             position="1.20 0.16 13.56">
         </a-collada-model>
-         
-        <!-- Elevator 
+
+        <!-- Elevator
         <a-curvedimage id="elevator" src="#elevator"
             theta-length="360"
             height="4"
             position="-0.04 -2.00 5.00">
         </a-curvedimage>
         -->
-         
+
          <!-- Sky -->
-        <a-sky id="sky" 
+        <a-sky id="sky"
             color="white">
         </a-sky>
-         
+
         <a-entity id="sound" sound="autoplay: true; src: #welcome;"></a-entity>
-        
+
          <!-- Camera -->
         <a-entity id="cameraWrapper" position="-0.04 1.2 5">
             <a-entity id="camera" camera look-controls wasd-controls>
@@ -191,8 +191,8 @@
                     geometry="primitive: ring; radiusOuter: 0.015; radiusInner: 0.01"
                     material="color: red; shader: flat; transparent: true; opacity: 0.6"
                     scale="1.5 1.5 1.5">
-                    
-                    <!-- Visual Feedback for cursor 
+
+                    <!-- Visual Feedback for cursor
                     <a-animation begin="click" easing="ease-in" attribute="scale"
                                  fill="backwards" from="2.1 2.1 2.1" to="1 1 1" dur="150">
                     </a-animation>
@@ -200,11 +200,11 @@
                                 fill="forwards" from="1 1 1" to="2.1 2.1 2.1" dur="1500x">
                     </a-animation>
                     -->
-                    
+
                 </a-entity>
             </a-entity>
        </a-entity>
-       <!-- 
+       <!--
         <a-entity camera position="-0.04 1.20 5.00">
             <a-entity cursor="maxDistance: 30; timeout: 500"
                       position="-0.04 1.20 5.00"
@@ -215,7 +215,7 @@
         </a-entity>
       -->
     </a-scene>
-    <script src="js/aframe-editor.js"></script>
+    <!--<script src="js/aframe-editor.js"></script>-->
     <script src="js/app.js"></script>
   </body>
-</html> 
+</html>
