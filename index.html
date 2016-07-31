@@ -7,7 +7,7 @@
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   </head>
   <body>
-     <a-scene editor stats>
+     <a-scene editor >
          <!-- Asset management system -->
          <a-assets>
              <img id="floor" src="img/wood.jpg">
@@ -17,6 +17,7 @@
              <img id="firewall" src="img/fire-icon.png">
              <img id="cloud" src="img/cloud-icon.png">
              <img id="elevator" src="img/elevator.jpg">
+             <img id="cloudText" src="img/Text_Cloud.png">
              <a-asset-item id="door" src="models/door/model.dae"/>
              <a-asset-item id="cloudServer" src="models/cloudcompt/model.dae"/>
              <!-- TODO: Fix audio -->
@@ -206,16 +207,24 @@
         </a-collada-model>
 
         <a-collada-model id="cloudServer" src="#cloudServer"
-            rotation="0.00 148.90 0.00"
-            position="-7.34 0.50 -2.35">
+             position="-4.55 0.50 -5.91"
+             rotation="0.00 126.46 0.00">
             <!-- Move towards user TODO: check if alterante direction would be better -->
             <a-animation id="yoyo" attribute="position"
-                         from="-7.34 0.50 -2.35" to="-2.60 0.50 1.40"
+                         from="-4.55 0.50 -5.91" to="-0.64 0.50 0.55"
                          begin="move" direction="normal" ease="linear" duration="3000">
             </a-animation>
             <!-- Disappear from user -->
             <a-animation begin="dissappear" attribute="position"></a-animation>
         </a-collada-model>
+
+        <a-entity id="serverBrick">
+
+        </a-entity>
+
+        <a-curvedimage src="#cloudText">
+
+        </a-curvedimage>
 
 
         <!-- Sky -->
@@ -227,7 +236,7 @@
         </a-entity>
 
         <!-- Camera -->
-        <a-entity id="cameraWrapper" position="-0.04 1.2 5">
+        <a-entity id="cameraWrapper" position="-0.04 1.00 5.00">
             <a-entity id="camera" camera look-controls wasd-controls>
                 <!-- Cursor -->
                 <a-entity id="cursor"
@@ -244,7 +253,7 @@
        <a-entity id="sound" sound="autoplay: true; src: #welcome;"></a-entity>
 
     </a-scene>
-    <script src="js/aframe-editor.js"></script>
+    <!-- <script src="js/aframe-editor.js"></script> -->
     <script src="js/app.js"></script>
   </body>
 </html>
