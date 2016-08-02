@@ -7,24 +7,24 @@
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   </head>
   <body>
-     <a-scene editor >
+     <a-scene editor>
          <!-- Asset management system -->
          <a-assets>
+             <img id="BHNlogo" src="img/BHNflat.png">
              <img id="floor" src="img/wood.jpg">
              <img id="brightU" src="img/BrightU_Logo.png">
              <img id="internet" src="img/internet.png">
              <img id="security" src="img/securityartwork.png">
              <img id="firewall" src="img/fire-icon.png">
              <img id="cloud" src="img/cloud-icon.png">
-             <img id="elevator" src="img/elevator.jpg">
+             <img id="elevator" src="img/blackbackground.jpg">
              <img id="cloudInfo" src="img/Text_Cloud.png">
              <a-asset-item id="door" src="models/door/model.dae"/>
              <a-asset-item id="cloudServer" src="models/cloudcompt/model.dae"/>
-             <!-- TODO: Fix audio -->
-             <audio id="welcome" src="sounds/welcome.ogg"/>
+             <audio id="welcome" src="sounds/welcome.mp3"/>
          </a-assets>
-
-
+                  
+         
         <!-- Bright House Logo -->
         <a-entity id="brightHouse" position="0 2.15 -3.53" scale=".50 .50 .50">
              <!-- Background blue -->
@@ -36,17 +36,17 @@
             </a-entity>
              <!-- Inner Circle -->
             <a-torus id="innerRing"
-                color="#FFB300"
+                color="#FFB300"  
                 segments-radial="100"
-                segments-tubular="200"
+                segments-tubular="200" 
                 radius="1"
                 radius-tubular="0.1">
             </a-torus>
              <!-- Outer Circle -->
             <a-torus id="outerRing"
-                color="#FFB300"
-                segments-radial="100"
-                segments-tubular="200"
+                color="#FFB300" 
+                segments-radial="100" 
+                segments-tubular="200" 
                 radius="2"
                 radius-tubular="0.1">
             </a-torus>
@@ -86,21 +86,21 @@
                 </a-entity>
             </a-entity>
             <!-- Shadow -->
-            <a-cylinder id="shadow"
-                    width="4.5"
+            <a-cylinder id="shadow" 
+                    width="4.5" 
                     height="0.00"
                     radius="2.10"
                     rotation="0.00 0.00 0.00"
                     position="0.00 -4.03 0.00"
                     material="opacity: .30; color: black">
             </a-cylinder>
-
+            
 <!--
             <a-event name="mouseenter" position="0.00 2.15 -2.0"></a-event>
             <a-event name="mouseleave" position="0 2.15 -5"></a-event>
 -->
          </a-entity>
-
+         
          <!-- BrightU Logo -->
         <a-curvedimage id="brightU" src="#brightU"
             height="3.0"
@@ -109,8 +109,8 @@
             rotation="0 -220 0"
             position="-0.08 11.90 2.28"
             scale="2.74 2.74 2.82">
-        </a-curvedimage>
-
+        </a-curvedimage> 
+         
         <!-- Enterprise/SMB Logos -->
          <!-- Internet -->
         <a-entity id="internetHolder" position="-6.24 2.10 2.79" rotation="0.00 22.12 0.00">
@@ -122,10 +122,10 @@
                 rotation="0.00 -17.32 1.60"
                 position="0.00 -0.16 0.00"
                 scale="1.58 1.02 1.70">
-            </a-curvedimage>
+            </a-curvedimage> 
             <!-- Shadow -->
-            <a-cylinder id="internetShadow"
-                width="4.5"
+            <a-cylinder id="internetShadow" 
+                width="4.5" 
                 height="0.00"
                 radius="1.00"
                 rotation="0.00 0.00 0.00"
@@ -133,7 +133,7 @@
                 material="opacity: .30; color: black">
             </a-cylinder>
         </a-entity>
-
+        
          <!-- Cloud -->
         <a-entity id="cloudHolder" position="-3.89 2.10 -1.44">
             <a-curvedimage id="cloudIcon" src="#cloud"
@@ -146,8 +146,8 @@
                 scale="1.58 1.02 1.70">
             </a-curvedimage>
             <!-- Shadow -->
-            <a-cylinder id="cloudShadow"
-                width="4.5"
+            <a-cylinder id="cloudShadow" 
+                width="4.5" 
                 height="0.00"
                 radius="1.00"
                 rotation="0.00 0.00 0.00"
@@ -155,7 +155,7 @@
                 material="opacity: .30; color: black">
             </a-cylinder>
         </a-entity>
-
+        
          <!-- Security -->
         <a-entity id="securityHolder" position="3.89 2.10 -1.44">
             <a-curvedimage id="securityIcon" src="#security"
@@ -168,8 +168,8 @@
                 scale="1.58 1.02 1.70">
             </a-curvedimage>
             <!-- Shadow -->
-            <a-cylinder id="secShadow"
-                width="4.5"
+            <a-cylinder id="secShadow" 
+                width="4.5" 
                 height="0.00"
                 radius="1.00"
                 rotation="0.00 0.00 0.00"
@@ -177,7 +177,7 @@
                 material="opacity: .30; color: black">
             </a-cylinder>
         </a-entity>
-
+ 
          <!-- Firewall -->
         <a-entity id="firewallHolder" position="6.24 2.10 2.79" rotation="0.00 -16.85 0.00">
             <a-curvedimage id="firewallIcon" src="#firewall"
@@ -190,8 +190,8 @@
                 scale="1.58 1.02 1.70">
             </a-curvedimage>
             <!-- Shadow -->
-            <a-cylinder id="fireShadow"
-                width="4.5"
+            <a-cylinder id="fireShadow" 
+                width="4.5" 
                 height="0.00"
                 radius="1.00"
                 rotation="0.00 0.00 0.00"
@@ -199,11 +199,11 @@
                 material="opacity: .30; color: black">
             </a-cylinder>
         </a-entity>
-
+        
         <a-entity id="cloudFull" position="-4.65 0.50 -5.91">
             <!-- animation for entire cloud model -->
-            <a-animation id="cloud-yoyo" attribute="position"
-                 from="-4.65 0.50 -5.91" to="-0.64 0.50 0.45"
+            <a-animation id="cloud-yoyo" attribute="position" 
+                 from="-4.65 0.50 -5.91" to="-0.64 0.50 0.45" 
                  begin="yoyo" direction="alternate" ease="linear" dur="3000">
             </a-animation>
             <!-- Cloud Server model -->
@@ -215,8 +215,8 @@
                 rotation="0.00 7.10 0.00"
                 position="0.59 0.80 2.30"
                 scale="0.92 0.80 0.04">
-                <a-animation id="cloudTextFade" attribute="material.opacity"
-                    from="0.00" to="1.00"
+                <a-animation id="cloudTextFade" attribute="material.opacity" 
+                    from="0.00" to="1.00" 
                     begin="fade" direction="alternate" dur="2500">
                 </a-animation>
             </a-curvedimage>
@@ -227,42 +227,76 @@
                 material="color: red; opacity: 0.70">
             </a-entity>
         </a-entity>
-
+         
         <!-- 3D Door -->
         <a-collada-model id="door" src="#door"
             rotation="0.00 90.00 0.00"
             position="1.20 0.16 14.30">
         </a-collada-model>
+         
 
-
-
+        <!-- Elevator -->
+        <a-entity id="elevatorFull" position="0.00 1.30 4.90">
+            <!-- Elevator 'Descent' animation -->
+            <a-animation id="elevator-descent" attribute="position" 
+                 to="0.00 -1.81 4.90" begin="descent" 
+                 direction="normal" ease="linear" dur="9000">
+            </a-animation>
+            
+            <!-- Environment picture -->
+            <a-curvedimage id="elevatorRoom" src="#elevator"
+                    position="0.00 0.30 0.00"
+                    scale="1.20 2.92 1.20"
+                    theta-length="360.00">
+            </a-curvedimage>
+            <a-cylinder id="elevatorCeiling" color="black" position="0.00 1.76 0.00" scale="2.55 0.00 2.50"></a-cylinder>
+            <a-cylinder id="elevatorFloor" color="black" position="0.00 -1.18 0.00" scale="2.55 0.00 2.50"></a-cylinder>
+            <!-- Power Button -->
+            <a-curvedimage id="bhnPower" src="#BHNlogo"
+                    theta-start="160.52"
+                    theta-length="40.00"
+                    rotation="-16.16 0.00 0.00"
+                    position="0.00 -0.32 0.00"
+                    scale="0.30 0.38 1.16">
+            </a-curvedimage>
+        </a-entity>
+         
         <!-- Sky -->
         <a-sky id="sky" color="white"></a-sky>
         <!-- Floor -->
-        <a-entity id="floor"
+        <a-entity id="floor" 
             geometry="primitive: cylinder; height: .2; radius: 12"
             material="src: #floor; metalness: .1; repeat: 50 20; roughness: .2">
         </a-entity>
-
+         
+        
         <!-- Camera -->
         <a-entity id="cameraWrapper" position="-0.04 1.00 5.00">
             <a-entity id="camera" camera look-controls wasd-controls>
                 <!-- Cursor -->
                 <a-entity id="cursor"
-                    cursor="fuse: true; maxDistance: 800; timeout: 850"
+                    cursor="fuse: true; maxDistance: 800; timeout: 1050"
                     position="0 0 -2"
                     geometry="primitive: ring; radiusOuter: 0.021; radiusInner: 0.016"
-                    material="color: #b3b3b3; shader: flat; transparent: true; opacity: 0.35"
+                    material="color: #b3b3b3; shader: flat; transparent: true; opacity: 0.55"
                     scale="3.5 3.5 1.5"
                     raycaster>
                 </a-entity>
             </a-entity>
-       </a-entity>
-        <!-- Sound -->
-       <a-entity id="sound" sound="autoplay: true; src: #welcome;"></a-entity>
-
+        </a-entity>
+         
+        <!-- Additional Animations --> 
+        <a-torus id="scanner" position="0.00 0.09 5.00" color="#FFB300" radius="2.30" radius-tubular="0.01" rotation="90.00 0.00 0.00">
+            <a-animation id="elevator-scan" attribute="position"
+                    from="0.00 0.04 5.00" to="0.00 3.05 5.00" begin="scan"
+                    direction="alternate" ease="linear" dur="3500" repeat="1">
+            </a-animation> 
+        </a-torus> 
+         
+        <!-- Welcome to BHN -->
+       <a-entity sound="src: sounds/welcome.mp3; volume: 25"></a-entity>
     </a-scene>
-    <!-- <script src="js/aframe-editor.js"></script> -->
+    <script src="js/aframe-editor.js"></script>
     <script src="js/app.js"></script>
   </body>
-</html>
+</html> 
