@@ -1,350 +1,254 @@
-<!Doctype HTML>
-<html>
-  <head>
-    <title>BrightU 2.0 - A-Frame</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
-  </head>
-  <body>
-     <a-scene>
-         <!-- Asset management system -->
-         <a-assets>
-             <img id="BHNlogo" src="img/BHNflat.png">
-             <img id="floor" src="img/wood.jpg">
-             <img id="brightU" src="img/BrightU_Logo.png">
-             <img id="internet" src="img/internet.png">
-             <img id="security" src="img/securityartwork.png">
-             <img id="firewall" src="img/fire-icon.png">
-             <img id="cloud" src="img/cloud-icon.png">
-             <img id="elevator" src="img/blackbackground.jpg">
-             <img id="cloudInfo" src="img/felton-cloud.png">
-             <img id="charterLogo" src="img/charter-logo.png">
-             <a-asset-item id="door" src="models/door/model.dae"/>
-             <a-asset-item id="cloudServer" src="models/cloudcompt/model.dae"/>
-             <audio id="welcome" src="sounds/welcome.mp3"/>
-         </a-assets>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Gabriel de Diego - Software Developer</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- Hover CSS -->
+		<link href="css/hover-min.css" rel="stylesheet" media="all">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	  <!-- Devicon -->
+		<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-mfizz/2.4.1/font-mfizz.min.css" rel="stylesheet" type="text/css">
+ 	  <!-- Web Icon -->
+	  <link href="https://maxcdn.icons8.com/iOS7/PNG/512/User_Interface/virtual_reality-512.png" rel="shortcut icon" type="image/x-icon">
+</head>
 
+<body>
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a href="#top" onclick=$("#menu-close").click();>Gabriel de Diego</a>
+            </li>
+            <li>
+                <a href="#top" onclick=$("#menu-close").click();>Home</a>
+            </li>
+            <li>
+                <a href="#about" onclick=$("#menu-close").click();>About</a>
+            </li>
+						<li>
+                <a href="#skills" onclick=$("#menu-close").click();>Skills</a>
+            </li>
+						<li>
+                <a href="#education" onclick=$("#menu-close").click();>Education</a>
+            </li>
+            <li>
+                <a href="#portfolio" onclick=$("#menu-close").click();>Portfolio</a>
+            </li>
+        </ul>
+    </nav>
 
-        <!-- Bright House Logo -->
-        <a-entity id="brightHouse" position="0 2.15 -3.53" scale=".50 .50 .50">
-             <!-- Background blue -->
-            <a-entity id="backgroundBHN"
-                geometry="primitive: circle; depth: 1.00; height: 1.00; width: 1.00"
-                material="color: #19237E"
-                position="0.00 0.10 -0.85"
-                scale="3.00 3.00 0.00">
-            </a-entity>
-             <!-- Inner Circle -->
-            <a-torus id="innerRing"
-                color="#FFB300"
-                segments-radial="100"
-                segments-tubular="200"
-                radius="1"
-                radius-tubular="0.1">
-            </a-torus>
-             <!-- Outer Circle -->
-            <a-torus id="outerRing"
-                color="#FFB300"
-                segments-radial="100"
-                segments-tubular="200"
-                radius="2"
-                radius-tubular="0.1">
-            </a-torus>
-            <a-entity id="outerShell">
-                <a-animation attribute="rotation" to="0 360 0" repeat="indefinite" easing="linear" dur="7000"></a-animation>
-                 <!-- Bottom left ring -->
-                <a-entity id="btmLeft"
-                    geometry="primitive: cylinder; openEnded: true; thetaLength: 81"
-                    material="side: double; color: #FFB300"
-                    rotation="90 180 0"
-                    position="-0.90 -0.88 0"
-                    scale="1.30 .54 1.40">
-                </a-entity>
-                <!-- Bottom right ring -->
-                <a-entity id="btmRight"
-                    geometry="primitive: cylinder; openEnded: true; thetaLength: 81"
-                    material="side: double; color: #FFB300"
-                    rotation="90 360 0"
-                    position="0.90 -0.88 0"
-                    scale="1.30 .54 1.40">
-                </a-entity>
-                 <!-- Top right ring -->
-                 <a-entity id="topRight"
-                    geometry="primitive: cylinder; openEnded: true; thetaLength: 81"
-                    material="side: double; color: #FFB300"
-                    rotation="-90 360 0"
-                    position="0.90 .88 0"
-                    scale="1.30 .54 1.40">
-                </a-entity>
-                 <!-- Top left ring -->
-                 <a-entity id="topLeft"
-                    geometry="primitive: cylinder; openEnded: true; thetaLength: 81"
-                    material="side: double; color: #FFB300"
-                    rotation="-90 -180 0"
-                    position="-0.90 .88 0"
-                    scale="1.30 .54 1.40">
-                </a-entity>
-            </a-entity>
-            <!-- Shadow -->
-            <a-cylinder id="shadow"
-                    width="4.5"
-                    height="0.00"
-                    radius="2.10"
-                    rotation="0.00 0.00 0.00"
-                    position="0.00 -4.03 0.00"
-                    material="opacity: .30; color: black">
-            </a-cylinder>
+    <!-- Header -->
+    <header id="top">
+			<video autoplay muted loop><source src="img/20226430.mp4"></video>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center" id="welcome">
+						<!--<h1 id="heading-main">I'm Gabriel. I believe in</h1>-->
+						<h1 id="name-animation"></h1><span id="blinker"></span>
+						<hr class="main-rule">
+					</div>
+				</div>
+			</div>
+    </header>
 
-<!--
-            <a-event name="mouseenter" position="0.00 2.15 -2.0"></a-event>
-            <a-event name="mouseleave" position="0 2.15 -5"></a-event>
--->
-         </a-entity>
+    <!-- About -->
+    <section id="about">
+				<div class="container">
+					<div class="row">
+							<div class="col-md-12 text-center">
+									<h2 class="sectionTitle">About Me</h2>
+									<hr class="small">
+							</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<h3 id="name">Gabriel de Diego</h3>
+							<h4 id="profession">Virtual Reality Developer</h4>
+							<p id="summary">My passion stems from a childhood vision to achieve what most deem impractical. Up until a handful of years ago, the product of immersive computing lay dormant within Hollywood and Science Fiction worlds. Today, we are witnessing the emmergence of what many are calling the <span id="italic">"final computing platform"</span>. Both augmented and virtual reality will have a profound impact, and I plan to be at the forefront of this new paradigm shift.</p>
+						</div>
+						<div class="col-md-6">
+							<img id="headshot" src="img/headshotCircle.png">
+						</div>
+					</div>
+				 </div>
+    </section>
 
-         <!-- BrightU Logo -->
-        <a-curvedimage id="brightU" src="#brightU"
-            height="3.0"
-            radius="5.7"
-            theta-length="72"
-            rotation="0 -220 0"
-            position="-0.08 11.90 2.28"
-            scale="2.74 2.74 2.82">
-        </a-curvedimage>
+    <!-- Services -->
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <section id="skills">
+        <div class="container-fluid">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2 class="sectionTitle">Skillset</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="skill-items">
+															<!-- Unity -->
+															<i class="icon-unity skillIcon"></i>
+															<!-- C# -->
+															<i class="devicon-csharp-plain skillIcon"></i>
+															<!-- JavaScript -->
+															<i class="icon-javascript-alt skillIcon"></i>
+															<!-- Nodejs -->
+															<i class="icon-nodejs skillIcon"></i>
+															<!-- Git -->
+															<i class="icon-git skillIcon"></i>
+															<!-- HTML5 -->
+															<i class="icon-html5-alt skillIcon"></i>
+															<!-- CSS3 -->
+															<i class="icon-css3-alt skillIcon"></i>
+                            </div>
+												</div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
 
-        <!-- Enterprise/SMB Logos -->
-         <!-- Internet -->
-        <a-entity id="internetHolder" position="-6.24 2.10 2.79" rotation="0.00 22.12 0.00">
-            <a-curvedimage id="internetIcon" src="#internet"
-                height="3.0"
-                radius="1.0"
-                theta-start="180"
-                theta-length="145"
-                rotation="0.00 -17.32 1.60"
-                position="0.00 -0.16 0.00"
-                scale="1.58 1.02 1.70">
-            </a-curvedimage>
-            <!-- Shadow -->
-            <a-cylinder id="internetShadow"
-                width="4.5"
-                height="0.00"
-                radius="1.00"
-                rotation="0.00 0.00 0.00"
-                position="-0.86 -1.95 -0.54"
-                material="opacity: .30; color: black">
-            </a-cylinder>
-        </a-entity>
+    <!-- Education -->
+    <section id="education">
+			<div class="container">
+				<div class="row">
+							<div class="col-md-12 text-center">
+									<h2 class="sectionTitle">Education</h2>
+									<hr class="small">
+							</div>
+					</div>
+				<div class="row">
+					<div class="col-md-6">
+						<img class="logo" src="img/SCIS-FIU.png">
+					</div>
+					<div class="col-md-6">
+						<h3 class="heading">B.S. Information Technology</h3>
+						<p class="description">Through the pursuit of formal education, I achieved a Bachelors of Science in Information Technology. My area of concentrations for this degree focused on Application Development & Unix Systems.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<img class="logo" src="img/udacity_logo.png">
+					</div>
+					<div class="col-md-6">
+						<h3 class="heading">VR Developer Nanodegree</h3>
+						<p class="description">From learning about 3D scenes, C# Software Development, VR Design, and High Immersion Engineering, Udacity has empowered me with a fresh outlook on Virtual Reality. My studies included a specialization in High Immersion Unity Development for Oculus Rift / Vive, as well as Mobile VR Performance.</p>
+					</div>
+				</div>
+			</div>
+    </section>
 
-         <!-- Cloud -->
-        <a-entity id="cloudHolder" position="-3.89 2.10 -1.44">
-            <a-curvedimage id="cloudIcon" src="#cloud"
-                height="3.0"
-                radius="1.0"
-                theta-start="180"
-                theta-length="145"
-                rotation="0.00 -35.88 0.00"
-                position="0.00 -0.16 0.00"
-                scale="1.58 1.02 1.70">
-            </a-curvedimage>
-            <!-- Shadow -->
-            <a-cylinder id="cloudShadow"
-                width="4.5"
-                height="0.00"
-                radius="1.00"
-                rotation="0.00 0.00 0.00"
-                position="-0.73 -1.95 -0.98"
-                material="opacity: .30; color: black">
-            </a-cylinder>
-        </a-entity>
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2 class="sectionTitle">Our Work</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-3.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
+                                </a>
+                            </div>
+                        </div>
+												<div class="col-md-3">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-3.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                    <a href="#" class="btn btn-dark">View More Items</a>
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+	
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Follow Me</strong></h4>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="https://medium.com/@gdedi001/"><i class="fa fa-medium fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/dediegog/"><i class="fa fa-linkedin-square fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/gdedi001"><i class="fa fa-github fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                    <hr class="small">
+                    <p class="text-muted">Copyright &copy; Gabriel de Diego 2017</p>
+                </div>
+            </div>
+        </div>
+        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+    </footer>
 
-         <!-- Security -->
-        <a-entity id="securityHolder" position="3.89 2.10 -1.44">
-            <a-curvedimage id="securityIcon" src="#security"
-                height="3.0"
-                radius="1.0"
-                theta-start="180"
-                theta-length="145"
-                rotation="0.00 -95.88 0.00"
-                position="0.00 -0.16 0.00"
-                scale="1.58 1.02 1.70">
-            </a-curvedimage>
-            <!-- Shadow -->
-            <a-cylinder id="secShadow"
-                width="4.5"
-                height="0.00"
-                radius="1.00"
-                rotation="0.00 0.00 0.00"
-                position="0.33 -1.95 -1.00"
-                material="opacity: .30; color: black">
-            </a-cylinder>
-        </a-entity>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/main.js"></script>
+		<script src="js/animation.js"></script>
 
-         <!-- Firewall -->
-        <a-entity id="firewallHolder" position="6.24 2.10 2.79" rotation="0.00 -16.85 0.00">
-            <a-curvedimage id="firewallIcon" src="#firewall"
-                height="3.0"
-                radius="1.0"
-                theta-start="180"
-                theta-length="145"
-                rotation="0.00 -138.82 0.00"
-                position="0.00 -0.16 0.00"
-                scale="1.58 1.02 1.70">
-            </a-curvedimage>
-            <!-- Shadow -->
-            <a-cylinder id="fireShadow"
-                width="4.5"
-                height="0.00"
-                radius="1.00"
-                rotation="0.00 0.00 0.00"
-                position="1.04 -1.95 -0.51"
-                material="opacity: .30; color: black">
-            </a-cylinder>
-        </a-entity>
+</body>
 
-        <a-entity id="cloudFull" position="-4.65 0.50 -5.91">
-            <!-- animation for entire cloud model -->
-            <a-animation id="cloud-yoyo" attribute="position"
-                 from="-4.65 0.50 -5.91" to="-0.64 0.50 0.45"
-                 begin="yoyo" direction="alternate" ease="linear" dur="3000">
-            </a-animation>
-            <!-- Cloud Server model -->
-            <a-collada-model id="cloudServer" src="#cloudServer" position="-0.28 0.00 0.00" rotation="0.00 151.00 0.00"></a-collada-model>
-            <!-- Text Description -->
-            <a-curvedimage id="cloudText" src="#cloudInfo"
-                theta-start="154.00"
-                theta-length="70.00"
-                rotation="0.00 7.10 0.00"
-                position="0.59 0.80 2.30"
-                scale="0.92 0.80 0.04">
-                <a-animation id="cloudTextFade" attribute="material.opacity"
-                    from="0.00" to="1.00"
-                    begin="fade" direction="alternate" dur="2500">
-                </a-animation>
-            </a-curvedimage>
-            <!-- EXIT icon -->
-            <a-entity id="exit"
-                geometry="primitive: circle; radius: .07"
-                position="1.33 1.15 2.16"
-                material="color: red; opacity: 0.70">
-            </a-entity>
-        </a-entity>
-
-        <!-- 3D Door -->
-        <a-collada-model id="door" src="#door"
-            rotation="0.00 90.00 0.00"
-            position="1.20 0.16 14.30">
-        </a-collada-model>
-
-
-        <!-- Elevator -->
-        <a-entity id="elevatorFull" position="0.00 1.30 4.90">
-            <!-- Elevator 'Descent' animation -->
-            <a-animation id="elevator-descent" attribute="position"
-                 to="0.00 -1.81 4.90" begin="descent"
-                 direction="normal" ease="linear" dur="9000">
-            </a-animation>
-
-            <!-- Environment picture -->
-            <a-curvedimage id="elevatorRoom" src="#elevator"
-                    position="0.00 0.30 0.00"
-                    scale="1.20 2.92 1.20"
-                    theta-length="360.00">
-            </a-curvedimage>
-            <a-cylinder id="elevatorCeiling" color="black" position="0.00 1.76 0.00" scale="2.55 0.00 2.50"></a-cylinder>
-            <a-cylinder id="elevatorFloor" color="black" position="0.00 -1.18 0.00" scale="2.55 0.00 2.50"></a-cylinder>
-            <!-- Power Button -->
-            <a-curvedimage id="bhnPower" src="#BHNlogo"
-                    theta-start="160.52"
-                    theta-length="40.00"
-                    rotation="-16.16 0.00 0.00"
-                    position="0.00 -0.32 0.00"
-                    scale="0.30 0.38 1.16"
-                    sound="src: sounds/welcome.mp3; volume: 2; on: click">
-            </a-curvedimage>
-        </a-entity>
-
-        <!-- Sky -->
-        <a-sky id="sky" color="white"></a-sky>
-
-        <!-- Charter Logo -->
-        <a-curvedimage id="charter" src="#charterLogo"
-                    theta-start="49.12"
-                    theta-length="49.32"
-                    rotation="-13.04 90.00 92.58"
-                    position="-1.00 19.64 5.06"
-                    scale="0.94 1.94 2.94">
-        </a-curvedimage>
-
-        <!-- Clouds (mid1, mid2, far) -->
-        <a-box id="cloud-mid1" color="grey"
-               position="-15.55 13.93 0.00"
-               scale="3.10 1.24 3.48"
-               opacity="0.25">
-            <a-animation attribute="position"
-                    dur="30000"
-                    repeat="indefinite"
-                    easing="linear"
-                    from="-15.55 13.93 0.00"
-                    to="-7.20 10.93 -22.32"
-                    direction="alternate">
-            </a-animation>
-        </a-box>
-        <a-box id="cloud-mid2" color="grey"
-               position="13.03 10.93 7.00"
-               scale="3.10 1.24 5.48"
-               opacity="0.35">
-            <a-animation attribute="position"
-                    dur="29000"
-                    repeat="both"
-                    easing="linear"
-                    from="13.03 10.93 7.00"
-                    to="13.03 10.93 -24.84">
-            </a-animation>
-        </a-box>
-        <a-box id="cloud-far" color="grey"
-               position="-0.81 17.93 -11.49"
-               scale="3.10 1.24 5.48"
-               opacity="0.20">
-            <a-animation attribute="position"
-                    dur="40000"
-                    repeat="indefinite"
-                    easing="linear"
-                    from="-0.81 17.93 -11.49"
-                    to="-0.81 17.93 17.40"
-                    direction="alternate">
-            </a-animation>
-        </a-box>
-        <!-- Floor -->
-        <a-entity id="floor"
-            geometry="primitive: cylinder; height: .2; radius: 12"
-            material="src: #floor; metalness: .1; repeat: 50 20; roughness: .2">
-        </a-entity>
-
-
-        <!-- Camera -->
-        <a-entity id="cameraWrapper" position="-0.04 1.00 5.00">
-            <a-entity id="camera" camera look-controls wasd-controls>
-                <!-- Cursor -->
-                <a-entity id="cursor"
-                    cursor="fuse: true; maxDistance: 800; timeout: 1050"
-                    position="0 0 -2"
-                    geometry="primitive: ring; radiusOuter: 0.021; radiusInner: 0.016"
-                    material="color: #b3b3b3; shader: flat; transparent: true; opacity: 0.55"
-                    scale="3.5 3.5 1.5"
-                    raycaster>
-                </a-entity>
-            </a-entity>
-        </a-entity>
-
-        <!-- Additional Animations -->
-        <a-torus id="scanner" position="0.00 0.09 5.00" color="#FFB300" radius="2.30" radius-tubular="0.01" rotation="90.00 0.00 0.00">
-            <a-animation id="elevator-scan" attribute="position"
-                    from="0.00 0.04 5.00" to="0.00 3.05 5.00" begin="scan"
-                    direction="alternate" ease="linear" dur="3500" repeat="1">
-            </a-animation>
-        </a-torus>
-    </a-scene>
-    <!-- <script src="js/aframe-editor.js"></script> -->
-    <script src="js/app.js"></script>
-  </body>
 </html>
