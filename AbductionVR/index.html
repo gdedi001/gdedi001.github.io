@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AbductionVR - A Web VR Experience</title>
+		<!-- Import A-Frame JS file -->
+		<script src="https://aframe.io/releases/latest/aframe.min.js"></script>
+	</head>
+	<body>
+		<a-scene>
+			<!-- Background image -->
+			<a-sky src="./img/sky.jpg"></a-sky>
+			<!-- required lighting for 'real colors' -->
+			<a-light type="ambient" color="#FFF"></a-light>
+			<a-light intensity="5"></a-light>
+			
+            <!-- curved image cylinder -->
+            <a-curvedimage src= "./img/aliensM.jpg" theta-length="360" position="0 1339 0"></a-curvedimage>
+			
+			<!-- Alien Spaceship template -->
+			<template is="a-template" element="aliens-ship">				
+				<a-entity position="0 1.5 0" rotation="0 0 0" geometry="primitive: cylinder; radius: 135.2; height: 2.5; openEnded: false;" material="color: #000000"></a-entity>
+				<a-entity position="0 0 0" rotation="90 90 30" geometry="primitive: torus; radius: 135.5; segmentsTubular: 100;" material="color: #00ff00"></a-entity>
+			</template>
+			
+			<!-- Abduction sphere template Rotation (1) -->
+			<template is="a-template" element="abduction-sphere">
+				<a-entity geometry="primitive: torus; radius: 15 width: 10" rotation="0 0 0" material=" side: double; opacity: 1; color:#00ccff;">
+					<a-animation attribute="rotation"
+						from="90 90 0"	
+						to="90 0 0"
+						repeat="indefinite"></a-animation>
+				</a-entity>
+			</template>
+			
+			<!-- Abduction sphere template Rotation (2) inverse -->
+			<template is="a-template" element="abduction-sphere-inv">
+				<a-entity geometry="primitive: torus; radius: 15 width: 10" rotation="0 0 0" material=" side: double; opacity: 1; color:#000000;">
+					<a-animation attribute="rotation"
+						from="90 -90 0"	
+						to="90 0 0"
+						repeat="indefinite"></a-animation>
+				</a-entity>
+			</template>
+			
+			
+			<!-- Alien Spaceship entity -->
+			<aliens-ship position="0 10000 2000" rotation="0 0 0">
+				<a-animation attribute="position"
+				   from="0 70 -2180"
+				   to="0 1335 0"
+				   dur="10000"
+				   begin="5000"
+				   ease="linear"
+				   direction="alternate">
+				</a-animation>
+			</aliens-ship>
+
+			
+			<!--Abduction Spherer entities--> 
+			<abduction-sphere-inv position="0 20 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 30 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 40 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 50 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 60 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 70 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 80 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 90 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 140 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 180 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 200 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 210 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 220 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 250 0"></abduction-sphere>
+			
+            <abduction-sphere-inv position="0 280 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 285 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 290 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 295 0"></abduction-sphere>
+			
+            <abduction-sphere-inv position="0 325 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 330 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 335 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 340 0"></abduction-sphere>
+            
+            <abduction-sphere-inv position="0 370 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 375 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 380 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 385 0"></abduction-sphere>
+			
+            <abduction-sphere-inv position="0 415 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 420 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 425 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 430 0"></abduction-sphere>
+			
+            <abduction-sphere-inv position="0 460 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 465 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 470 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 475 0"></abduction-sphere>
+			
+            <abduction-sphere-inv position="0 200 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 210 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 220 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 250 0"></abduction-sphere>
+			
+			<abduction-sphere-inv position="0 255 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 310 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 270 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 315 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 275 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 320 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 280 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 325 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 285 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 330 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 290 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 335 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 295 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 340 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 300 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 345 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 550 0"></abduction-sphere-inv>
+			<abduction-sphere-inv position="0 555 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 560 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 570 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 575 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 580 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 585 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 590 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 600 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 610 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 615 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 620 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 625 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 630 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 635 0"></abduction-sphere>
+			<abduction-sphere position="0 640 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 645 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 650 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 650 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 665 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 515 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 670 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 520 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 675 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 525 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 680 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 530 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 685 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 535 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 690 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 540 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 695 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 545 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 700 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 550 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 705 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 555 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 710 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 560 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 715 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 565 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 720 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 570 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 725 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 575 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 730 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 580 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 735 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 585 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 740 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 590 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 745 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 595 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 750 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 600 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 755 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 605 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 760 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 610 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 765 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 615 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 770 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 620 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 775 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 625 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 780 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 630 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 785 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 635 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 790 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 640 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 795 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 645 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 800 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 650 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 805 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1200 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 810 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 625 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 811 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 630 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 812 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 635 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 813 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 640 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 814 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 645 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 815 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 650 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 816 0"></abduction-sphere>
+			<abduction-sphere position="0 817 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 819 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 820 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 821 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 822 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 823 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 824 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 834 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 838 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 840 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 845 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 850 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 855 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 860 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 865 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 870 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 875 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 880 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 885 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 900 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 910 0"></abduction-sphere>
+			<abduction-sphere position="0 920 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 930 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 940 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 950 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 960 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 970 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 980 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 990 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1000 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1010 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1020 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1030 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1040 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1050 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1060 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1070 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1080 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1090 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1100 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1200 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1270 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1200 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1270 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1205 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1275 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1210 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1280 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1215 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1285 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1220 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1290 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1225 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1295 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1230 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1300 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1235 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1305 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1240 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1310 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1245 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1315 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1250 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1320 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1255 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1325 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1260 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1330 0"></abduction-sphere>
+			<abduction-sphere-inv position="0 1265 0"></abduction-sphere-inv>
+			<abduction-sphere position="0 1335 0"></abduction-sphere>
+			
+			
+					
+			<!-- Green aura effect for abduction sequence -->
+			<a-entity geometry="primitive: cylinder; radius: 20; height: 950" position="0 1335 0" rotation="0 0 0" material=" side: double; opacity: .4;  open-ended: true; color:#66ff33;">
+				
+			</a-entity>
+			
+			
+			<!-- CAMERA -->
+			<a-entity position="0 0 0" camera look-controls="enabled: true" cursor-visible="true" cursor-color="blue" cursor-scale="2">
+				<a-animation attribute="position"
+				   from="0 0 0"
+				   to="0 1339 0"
+				   dur="30000"
+				   begin="10000"
+				   ease="linear"
+				   direction="alternate">
+				</a-animation>
+ 			</a-entity>
+		</a-scene>
+	</body>
+</html>
