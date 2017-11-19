@@ -17,6 +17,7 @@ body {
 }
 
 header {
+	background-color: black;
 	position: relative;
 }
 
@@ -242,9 +243,12 @@ header #subject {
 }
 
 footer {
-	background: #3A1C71;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71); 
+	padding: 50px 0;
+}
+
+.footer-list {
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .text-vertical-center {
@@ -414,7 +418,7 @@ section {
   bottom: 100%;
   left: 0;
   right: 0;
-  background-color: #008CBA;
+  background-color: rgba(64, 64, 64, .9);
   overflow: hidden;
   width: 100%;
   height:0;
@@ -474,12 +478,6 @@ section {
 
 .map iframe {
     pointer-events: none;
-}
-
-/* Footer */
-
-footer {
-    padding: 100px 0;
 }
 
 #to-top {
