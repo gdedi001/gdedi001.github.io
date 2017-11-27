@@ -126,7 +126,7 @@ header #subject {
 }
 
 #summary {
-	color: #525b4c;
+	color: black;
 	font-size: 20px;
 	font-weight: 300;
 	line-height: 33px;
@@ -141,6 +141,7 @@ header #subject {
 	display: block;
 	height: 60%;
 	margin: auto;
+	margin-top: 10%;
 	width: 60%;
 }
 
@@ -474,6 +475,12 @@ section {
     .map {
         height: 75%;
     }
+}
+
+@media only screen and (max-width: 585px) {
+	#welcome {
+		display: none;
+	}
 }
 
 .map iframe {
