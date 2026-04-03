@@ -13,9 +13,9 @@ export default defineConfig({
     target: 'es2022',
     rollupOptions: {
       output: {
-        manualChunks: {
-          three: ['three'],
-          gsap: ['gsap']
+        manualChunks: (id) => {
+          if (id.includes('node_modules/three')) return 'three';
+          if (id.includes('node_modules/gsap'))  return 'gsap';
         }
       }
     }
