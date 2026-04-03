@@ -15,17 +15,27 @@ export const JOBS = [
     era: 'XR',
     title: 'XR Developer',
     company: 'Various Studios',
-    period: '2017 – 2023',
+    period: '2016 – 2023',
     color: '#00E5FF',
     tech: ['Unity', 'Unreal Engine', 'WebXR', 'OpenXR', 'C#', 'Spatial Computing'],
     description: 'Specialized in building immersive VR/AR applications. Delivered real-time 3D experiences across enterprise, entertainment, and training.'
+  },
+  {
+    id: 'pivot-era',
+    era: 'Pivot',
+    title: 'AI Software Engineer',
+    company: 'Various',
+    period: '2023 – April 2026',
+    color: '#06B6D4',
+    tech: ['Python', 'LLMs', 'AI Integration', 'Prompt Engineering', 'API Development'],
+    description: 'The deliberate pivot toward AI — building intelligent software systems, integrating LLMs into production products, and developing the technical foundation for AI architecture.'
   },
   {
     id: 'ai-era',
     era: 'AI',
     title: 'AI Solutions Architect',
     company: 'Universal Destinations & Experiences',
-    period: '2024 – Present',
+    period: 'April 2026 – Present',
     color: '#8B5CF6',
     tech: ['LLMs', 'Prompt Engineering', 'Solutions Architecture', 'RAG', 'Python'],
     description: 'Designing AI-powered solutions for one of the world\'s largest entertainment companies. LLM integration and intelligent guest experience systems at scale.'

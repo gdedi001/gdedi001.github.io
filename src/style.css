@@ -344,8 +344,9 @@ section {
    ACCENT COLORS
    ============================================================ */
 .accent { color: var(--xr); }
-.xr-accent { color: var(--xr); }
-.ai-accent { color: var(--ai); }
+.xr-accent    { color: var(--xr); }
+.pivot-accent { color: #06B6D4; }
+.ai-accent    { color: var(--ai); }
 .glow-text {
   color: var(--glow);
   text-shadow: 0 0 20px rgba(167, 139, 250, 0.5), 0 0 40px rgba(167, 139, 250, 0.2);
@@ -355,7 +356,7 @@ section {
    JOURNEY SECTION
    ============================================================ */
 #journey {
-  min-height: 400vh;
+  min-height: 550vh;
   flex-direction: column;
   justify-content: flex-start;
   padding-top: 10vh;
@@ -408,9 +409,11 @@ section {
   border-radius: 2px;
 }
 
-.xr-card::after { background: var(--xr); box-shadow: 0 0 10px var(--xr); }
-.ai-card::after  { background: var(--ai); box-shadow: 0 0 10px var(--ai); }
-.ai-card { border-color: var(--glass-border-ai); }
+.xr-card::after    { background: var(--xr);  box-shadow: 0 0 10px var(--xr); }
+.pivot-card::after { background: #06B6D4;    box-shadow: 0 0 10px #06B6D4; }
+.ai-card::after    { background: var(--ai);  box-shadow: 0 0 10px var(--ai); }
+.pivot-card { border-color: rgba(6,182,212,0.25); }
+.ai-card    { border-color: var(--glass-border-ai); }
 
 .card-era-badge {
   display: inline-block;
@@ -423,8 +426,9 @@ section {
   margin-bottom: 1rem;
 }
 
-.xr-badge { background: rgba(0,229,255,0.1); color: var(--xr); border: 1px solid rgba(0,229,255,0.3); }
-.ai-badge  { background: rgba(139,92,246,0.1); color: var(--ai); border: 1px solid rgba(139,92,246,0.3); }
+.xr-badge    { background: rgba(0,229,255,0.1);  color: var(--xr);    border: 1px solid rgba(0,229,255,0.3); }
+.pivot-badge { background: rgba(6,182,212,0.1);  color: #06B6D4;      border: 1px solid rgba(6,182,212,0.3); }
+.ai-badge    { background: rgba(139,92,246,0.1); color: var(--ai);    border: 1px solid rgba(139,92,246,0.3); }
 
 .timeline-card h3 {
   font-size: 1.3rem;
@@ -460,6 +464,12 @@ section {
   background: rgba(0, 229, 255, 0.06);
   border: 1px solid rgba(0, 229, 255, 0.2);
   color: var(--xr);
+}
+
+.tech-tag.pivot-tag {
+  background: rgba(6,182,212,0.06);
+  border-color: rgba(6,182,212,0.25);
+  color: #06B6D4;
 }
 
 .tech-tag.ai-tag {
