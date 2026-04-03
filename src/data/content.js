@@ -15,7 +15,7 @@ export const JOBS = [
     era: 'XR',
     title: 'XR Developer',
     company: 'Various Studios',
-    period: '2016 – 2023',
+    period: '2016 – Aug 2024',
     color: '#00E5FF',
     tech: ['Unity', 'Unreal Engine', 'WebXR', 'OpenXR', 'C#', 'Spatial Computing'],
     description: 'Specialized in building immersive VR/AR applications. Delivered real-time 3D experiences across enterprise, entertainment, and training.'
@@ -23,9 +23,9 @@ export const JOBS = [
   {
     id: 'pivot-era',
     era: 'Pivot',
-    title: 'AI Software Engineer',
+    title: 'AI Engineer',
     company: 'Various',
-    period: '2023 – April 2026',
+    period: 'Aug 2024 – March 2026',
     color: '#06B6D4',
     tech: ['Python', 'LLMs', 'AI Integration', 'Prompt Engineering', 'API Development'],
     description: 'The deliberate pivot toward AI — building intelligent software systems, integrating LLMs into production products, and developing the technical foundation for AI architecture.'
