@@ -1,0 +1,22 @@
+{
+  "name": "personal-site",
+  "version": "1.0.0",
+  "description": "Gabriel's Personal Portfolio - The Architect of Realities",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "Gabriel",
+  "license": "ISC",
+  "dependencies": {
+    "gsap": "^3.14.2",
+    "three": "^0.183.2"
+  },
+  "devDependencies": {
+    "vite": "^8.0.3",
+    "vite-plugin-glsl": "^1.5.6"
+  }
+}

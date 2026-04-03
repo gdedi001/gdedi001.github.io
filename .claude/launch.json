@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Vite Dev Server",
+      "runtimeExecutable": "/Users/atlasair/.nvm/versions/node/v24.14.0/bin/node",
+      "runtimeArgs": ["/Users/atlasair/Documents/GitHub/Personal-Site/node_modules/.bin/vite", "--port", "5173"],
+      "port": 5173
+    }
+  ]
+}
