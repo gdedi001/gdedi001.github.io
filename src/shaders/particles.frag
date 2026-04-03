@@ -21,7 +21,7 @@ void main() {
   vec3 color = mix(colorA, colorB, uMorphProgress);
 
   // Slight brightness boost on the core
-  color += vec3(strength * 0.05);
+  color += vec3(strength * 0.03);
 
   gl_FragColor = vec4(color, strength * uOpacity);
 }
