@@ -2,6 +2,7 @@ uniform vec3 uColorA;
 uniform vec3 uColorB;
 uniform float uMorphProgress;
 uniform float uOpacity;
+uniform float uCoreBoost;
 
 varying float vMorphProgress;
 
@@ -21,7 +22,7 @@ void main() {
   vec3 color = mix(colorA, colorB, uMorphProgress);
 
   // Slight brightness boost on the core
-  color += vec3(strength * 0.003);
+  color += vec3(strength * uCoreBoost);
 
   gl_FragColor = vec4(color, strength * uOpacity);
 }

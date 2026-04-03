@@ -6,7 +6,8 @@ import { gsap }            from 'gsap';
 import vertShader from '../shaders/particles.vert';
 import fragShader from '../shaders/particles.frag';
 
-const PARTICLE_COUNT = window.innerWidth < 768 ? 7000 : 16000;
+const IS_MOBILE      = window.innerWidth < 1024;
+const PARTICLE_COUNT = IS_MOBILE ? 7000 : 16000;
 const GLOBE_RADIUS   = 2.6;
 
 // ─── Procedural position generators ────────────────────────────────────────
@@ -197,7 +198,8 @@ export class HeroScene {
         uPixelRatio:    { value: Math.min(window.devicePixelRatio, 1.5) },
         uColorA:        { value: new THREE.Color('#00E5FF') },
         uColorB:        { value: new THREE.Color('#8B5CF6') },
-        uOpacity:       { value: 1.0 }
+        uOpacity:       { value: IS_MOBILE ? 0.15 : 1.0 },
+        uCoreBoost:     { value: IS_MOBILE ? 0.00045 : 0.003 }
       },
       transparent: true,
       depthWrite: false,
@@ -214,7 +216,7 @@ export class HeroScene {
 
     const bloom = new UnrealBloomPass(
       new THREE.Vector2(window.innerWidth, window.innerHeight),
-      0.035, // strength
+      IS_MOBILE ? 0.005 : 0.035, // strength
       0.5,   // radius
       0.22   // threshold
     );
